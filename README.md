@@ -70,5 +70,4 @@ This project uses the [Rhino JavaScript Engine](https://github.com/mozilla/rhino
 To use Rhino in your project, include it as a dependency in your build configuration. For more details, refer to the [Rhino GitHub repository](https://github.com/mozilla/rhino).
 
 ## 📰 Updates
-- 28 July, 2024 - **New app icon added**
-- 26 July, 2024 - **Released !**
+- 28 July, 2024 - **Released !**
