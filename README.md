@@ -1,7 +1,7 @@
 
 # Calculator App - Jetpack Compose
 
-This dynamic UI **Calculator App** and uses Jetpack Compose for a responsive, modern interface across devices. It offers Dark, Warm, and Light themes and follows the MVVM architecture, incorporating the repository pattern for clean code. It supports basic arithmetic, handles errors gracefully.
+This is a dynamic UI **Calculator App** that uses Jetpack Compose for a responsive, modern interface across devices. It offers Dark, Warm, and Light themes and follows the MVVM architecture, incorporating the repository pattern for clean code. It supports basic arithmetic, handles errors gracefully.
 
 
 ## 📷 Preview
@@ -13,6 +13,9 @@ This dynamic UI **Calculator App** and uses Jetpack Compose for a responsive, mo
   <img src="media/Preview02.png" alt="drawing" width="270" />
   <img src="media/Preview03.png" alt="drawing" width="270" />
 </p>
+
+## 📱 Get Apk
+[APK](Apk)
 
 ## 🔥 Features
 
@@ -71,3 +74,6 @@ To use Rhino in your project, include it as a dependency in your build configura
 
 ## 📰 Updates
 - 28 July, 2024 - **Released !**
+
+## 🪪 License
+[MIT Licence](LICENSE)
