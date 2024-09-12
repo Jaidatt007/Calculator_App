@@ -9,7 +9,7 @@ import org.mozilla.javascript.Scriptable
 class CalculatorRepository {
 
     private val _inputtedEquation : counterEquation = counterEquation(counterEquation = "")
-    private val _resultData : resultData = resultData(resultData = "0")
+    private val _resultData : resultData = resultData(resultData = "")
 
     fun get_inputtedEquation() = _inputtedEquation
     fun get_resultData() = _resultData
@@ -27,6 +27,7 @@ class CalculatorRepository {
         }else if(symbol == "="){
             _resultData.resultData = calculateResult(_inputtedEquation.counterEquation)
             _inputtedEquation.counterEquation = _resultData.resultData
+            _resultData.resultData = ""
         } else {
             _inputtedEquation.counterEquation += symbol
             _resultData.resultData = "0"
@@ -35,6 +36,12 @@ class CalculatorRepository {
         Log.d("Equation",_inputtedEquation.counterEquation)
         Log.d("Calculating Equation",_inputtedEquation.counterEquation.replace("÷","/").replace("×","*"))
         Log.d("Result",_resultData.resultData)
+
+        try{
+            _resultData.resultData = calculateResult(_inputtedEquation.counterEquation)
+        }catch(e : Exception){
+            _resultData.resultData = ""
+        }
     }
 
     fun handleParenthesis(expression: String): String {
@@ -63,20 +70,30 @@ class CalculatorRepository {
     }
     
     fun calculateResult(equation:String) : String {
-        val context : Context = Context.enter()
-        context.optimizationLevel = -1
-        val scriptable : Scriptable = context.initStandardObjects()
-        // variable set to finalResult = jaidattFinalResult
-        val jaidattFinalResult = context.evaluateString(scriptable,equation.replace("÷","/").replace("×","*"),"Javascript",1,null).toString()
-        Log.d("Final result",jaidattFinalResult)
-        if(jaidattFinalResult.startsWith("org")){
-            return "0"
-        }else{
-            if(jaidattFinalResult.endsWith(".0")) {
-                return jaidattFinalResult.dropLast(2)
+        try {
+            val context: Context = Context.enter()
+            context.optimizationLevel = -1
+            val scriptable: Scriptable = context.initStandardObjects()
+            // variable set to finalResult = jaidattFinalResult
+            val jaidattFinalResult = context.evaluateString(
+                scriptable,
+                equation.replace("÷", "/").replace("×", "*"),
+                "Javascript",
+                1,
+                null
+            ).toString()
+            Log.d("Final result", jaidattFinalResult)
+            if (jaidattFinalResult.startsWith("org")) {
+                return ""
             } else {
-                return limitDecimalPlaces(jaidattFinalResult)
+                if (jaidattFinalResult.endsWith(".0")) {
+                    return jaidattFinalResult.dropLast(2)
+                } else {
+                    return limitDecimalPlaces(jaidattFinalResult)
+                }
             }
+        }catch (e : Exception){
+            return ""
         }
     }
     
