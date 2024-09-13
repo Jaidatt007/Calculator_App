@@ -9,12 +9,6 @@ This is a dynamic UI **Calculator App** that uses Jetpack Compose for a responsi
   <img src="media\PreviewGif01.gif" alt="drawing" width="210" />
 </p>
 <p align="center">
-  <video width="210" controls>
-    <source src="media/PreviewGif01.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</p>
-<p align="center">
   <img src="media/Preview01.png" alt="drawing" width="270" />
   <img src="media/Preview02.png" alt="drawing" width="270" />
   <img src="media/Preview03.png" alt="drawing" width="270" />
