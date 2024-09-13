@@ -6,7 +6,7 @@ This is a dynamic UI **Calculator App** that uses Jetpack Compose for a responsi
 
 ## 📷 Preview
 <p align="center">
-  <img src="media/PreviewGif01.mp4" alt="drawing" width="210" />
+  <img src="media\PreviewGif01.gif" alt="drawing" width="210" />
 </p>
 <p align="center">
   <video width="210" controls>
